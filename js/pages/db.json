@@ -1,0 +1,62 @@
+// api products list
+{
+    "totalCount": 100,
+    "totalPages": 6,
+    "curentPage": 5,
+    "limit": 6,
+    "data":[
+        {
+            "idProduct":4,
+            "model":"Acer Aspire 3",
+            "screen":"LCD 15\" FHD",
+            "CPU":"i3-1005G1",
+            "hardDrive":"SSD 500GB/HDD 1TB",
+            "OS":"10H SL",
+            "discount":50,
+            "background":"kdfsd.jpg",
+            "price":59999,
+            "created_at":"fsdf",
+            "updated_at":"fdsf"
+        }
+    ]
+}
+// api product
+{
+    "idProduct":5,
+    "model":"Acer Aspire 3",
+    "audio":"audio x24",
+    "LAN": "5vx",
+    "WIFI":"x534",
+    "screen":"x424",
+    "bluetooth":"LCD x424",
+    "webcam":"x324",
+    "battery":"xfsf",
+    "weight":"43",
+    "CPU":"xrwer",
+    "hardDrive":"xfsdf",
+    "VGA":"fsfs",
+    "warranty":"24234",
+    "discount":"23423",
+    "port":"sfsfd",
+    "opticalDrive":"234234",
+    "created_at":"fsfs",
+    "updated_at":"fsfsd",
+    "color":[{"idColor":"1","image":"sfsdf"},{"idColor":"1","image":"sfsdf"}],
+    "quantities":[{"idColor":"1","idQuantity":"1","price":"24234","quantity":2,"name":"sdfsdf"}]
+}
+//carts-session
+{
+    [
+        {
+            "carts":[
+                {
+                    "idProduct":"fsfs",
+                    "idColor":"",
+                    "idCapacity":"",
+                    "quantity":""
+                }
+            ]
+        }
+    ]
+}
+//cart-db

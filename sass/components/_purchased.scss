@@ -1,0 +1,121 @@
+@use "../abstracts/" as *;
+.purchased__container{
+    margin-top: $nav-height;
+    @include tablet {
+        margin-top: $nav-height-shrink;
+    }
+    @include mobile {
+        margin-top: $nav-height-shrink-moble;
+    }
+    padding: 10px;
+    background-color: $color-bg;
+    @include flex(flex-start,center);
+    flex-direction: column;
+}
+.purchased__list{
+    max-width: 990px;
+    width: 100%;
+    overflow: hidden;
+    background-color: $color-white;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0 , 5%);
+    margin-bottom: 12px;
+    &__status{
+        @include flex(space-between,center);
+        margin: 0px 24px;
+        padding-top: 24px;
+        padding-bottom: 12px;
+        & span{
+            font-size: 1.4rem;
+            color: #26aa99;
+            padding-right: 10px;
+        }
+    }
+    &__item{
+        cursor: pointer;
+        text-decoration: none;
+        color: $color-black;
+        margin: 0px 24px;
+        padding: 10px 0px; 
+        border-top: 1px solid $color-border;
+        @include flex(flex-start, center);
+        &-image{
+            width: 80px;
+            height: 80px;
+            margin-right: 12px;
+            & > img{
+                height: 100%;
+                width: 100%;
+                object-fit: contain;
+            }
+            border: 1px solid $color-border;
+        }
+        &__detail{
+            flex-grow: 1;
+            @include flex(space-between, center);
+            &__about{
+                &-name{
+                    height: 40px;
+                    width: 580px;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;  /* số dòng hiển thị */
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    font-size: 1.5rem;
+                    line-height: 19px;
+                }
+                &-category,&-quantity{
+                    height: 20px;
+                    font-size: 1.3rem;
+                    color: $color-text;
+                }
+            }
+            &__price{
+                font-size: 1.5rem;
+                font-weight: 400;
+                & > .old-price{
+                    text-decoration: line-through;
+                    color: $color-text;
+                    margin-right: 5px;
+                }
+                & > .current-price{
+                    color: $color-red;
+                }
+            }
+        }
+    }
+    &__totalprice, &__actions{
+        padding: 24px 24px;
+        padding-top: 15px;
+        background-color: #FFFEFB;
+        @include flex(flex-end,center);
+    }
+    &__totalprice{
+        border-top: 1px solid $color-border;
+        padding-bottom: 10px;
+        & >span{
+            margin-left: 5px;
+            color: $color-red;
+            font-size: 1.6rem;
+        }
+    }
+    &__actions{
+        padding-top: 0px;
+        & > span{
+            border: 1px solid $color-border;
+            background-color: $color-white;
+            color: $color-text;
+            padding: 5px 10px;
+            font-size: 1.6rem;
+            transition: all 0.3s ease;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+        & > span:hover,
+        & > span.active{
+            border-color: $color-primary;
+            color: $color-white;
+            background-color: $color-primary;
+        }
+    }
+}

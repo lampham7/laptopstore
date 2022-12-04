@@ -1,0 +1,1 @@
+{"version":3,"sourceRoot":"","sources":["../../sass/base/reset.scss","../../sass/abstracts/_mixin.scss","../../sass/abstracts/_variables.scss"],"names":[],"mappings":"AACQ;ACMR;AAAA;AAAA;AAAA;AAAA;;AAAA;ADLA;EACI;EACA;EACA;EACA;EACA;;;AAEJ;EACI;;;AAEJ;EACI;EACA;;;AAEJ;EACI;EACA;EACA;EACA;EACA,kBErBS","file":"reset.css"}

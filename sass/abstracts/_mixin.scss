@@ -1,0 +1,29 @@
+@use "./variables" as *;
+@mixin flex($justityContent,$alignItems) {
+    display: flex;
+    justify-content: $justityContent;
+    align-items: $alignItems;
+    @content;
+}
+/*
+@media only screen and (max-width: 576px) xs
+@media only screen and (min-width: 577px) and (max-width: 768px) sm
+@media only screen and (min-width: 769px) and (max-width: 992px) md
+@media only screen and (min-width: 993px) and (max-width: 1200px) lg
+
+*/
+@mixin mobile {
+    @media only screen and (max-width: $xs-width){
+        @content;
+    }
+}
+@mixin tablet{
+    @media only screen and (min-width: 1 + $xs-width) and (max-width: $sm-width){
+        @content;
+    }
+}
+@mixin smallDevice{
+    @media only screen and (max-width: $sm-width){
+        @content;
+    }
+}
