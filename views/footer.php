@@ -6,7 +6,7 @@
                 <a href="javascript:void(0);"><i class='bx bxl-twitter'></i></a>
             </div>
             <div class="footer__description">
-                Xây dựng bởi nhóm 8
+                Xây dựng bởi nhóm 6
             </div>
         </footer>
         <!-- end footer -->
