@@ -1,0 +1,243 @@
+@use "../../../abstracts/" as * ;
+.user__content{
+    box-shadow: 0px 0px 25px rgba(0,0,0,0.5) inset;
+    height: calc($userSidebarItemHeight * 6);
+    background-image: linear-gradient(90deg, rgba(0,0,0,81%), transparent);
+    width: calc($sm-width - $userSidebarItemWidth);
+    padding: $p-20;
+    overflow-y: auto;
+    @include flex(center, flex-start);
+    @include tablet{
+        padding-top: calc(10px + $navbar-height);
+        width: 100vw;
+        height: 100vh;
+    }
+    @include mobile{
+        padding-top: calc(10px + $navbar-height);
+        width: 100vw;
+        height: 100vh;
+    }
+}
+.user__form{
+    @include flex(center, center);
+    flex-direction: column;
+}
+.user__content::-webkit-scrollbar{
+    width: 5px;
+    background-color: transparent;
+}
+.user__content::-webkit-scrollbar-thumb{
+    border-radius: 5px;
+    background-color: $text-color-primary;
+}
+.user__heading{
+    text-align: center;
+    font-size: 2.6rem;
+    font-weight: 700;
+    word-spacing: 0px;
+    padding-bottom: $p-20;
+    color: $border-color;
+}
+.user__input__field{
+    position: relative;
+    margin-bottom: 20px;
+    &__icon{
+        position: absolute;
+        top: 50%;
+        left: 15px;
+        transform: translate(-50%, -50%);
+    }
+    &__error{
+        position: absolute;
+        bottom: 0;
+        left: 30px;
+        color: red;
+        transform: translateY(100%);
+        font-size: 1.2rem;
+        word-spacing: 0;
+        transition: transform 0.3s ease;
+    }
+    &__error.show{
+        transform: translateY(0%);
+    }
+    overflow: hidden;
+}
+.user__input{
+    background-color: $color-white;
+    display: block;
+    width: 280px;
+    padding: 10px 15px;
+    padding-left: 30px;
+    border: none;
+    outline: none;
+    font-size: 1.6rem;
+    border-radius: $border-radius;
+    transition: padding-bottom 0.3s ease;
+    &.show{
+        padding-bottom: 15px;
+    }
+}
+.user__btn__action{
+    text-align: center;
+    display: block;
+    width: 280px;
+    padding: 10px 15px;
+    font-size: 1.6rem;
+    border-radius: $border-radius;
+    &.small{
+        width: fit-content;
+        padding: 5px 20px;
+        border-radius: 5px;
+        text-transform: capitalize;
+        font-weight: 500;
+        letter-spacing: 1.5px;
+        margin-right: $m-t-20;
+    }
+    border: none;
+    outline: none;
+    color: $color-disable;
+    background-color: $text-color-second;
+    text-transform: uppercase;
+    cursor: not-allowed;
+    font-weight: bold;
+    &.active{
+        cursor: pointer;
+        background-color: $text-color-primary;
+        color: $color-white;
+    }
+}
+// for login
+.user__login{
+    &__forgotPassword{
+        margin-top: $m-t-10;
+        >a{
+            font-style: italic;
+            float: right;
+            color: $color-white;
+            font-size: 1.4rem;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            text-decoration: underline;
+        }
+        >a:hover{
+            color:$text-color-primary;
+            
+        }
+    }
+    &__more__actions{
+        &__createAccount{
+            width: 100%;
+            margin-top: $m-t-20;
+            @include flex(space-between, center);
+            >a{
+                color: $color-white;
+                font-size: 1.3rem;
+                text-decoration: none;
+                text-transform: capitalize;
+                transition: color 0.4s ease;
+                text-decoration: underline;
+            }
+            >a:hover{
+                color:$text-color-primary;
+                
+            }
+        }
+    }
+}
+//for register
+.user__register{
+    &__forgotPassword{
+        margin-top: $m-t-10;
+        >a{
+            font-style: italic;
+            float: right;
+            color: $color-white;
+            font-size: 1.4rem;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            text-decoration: underline;
+        }
+        >a:hover{
+            color:$text-color-primary;
+            
+        }
+    }
+    &__more__actions{
+        &__createAccount{
+            width: 100%;
+            margin-top: $m-t-20;
+            @include flex(space-between, center);
+            >a{
+                color: $color-white;
+                font-size: 1.3rem;
+                text-decoration: none;
+                text-transform: capitalize;
+                transition: color 0.4s ease;
+                text-decoration: underline;
+            }
+            >a:hover{
+                color:$text-color-primary;
+                
+            }
+        }
+    }
+}
+// for reset password
+.user_reset__password__container.disable{
+    > img{
+        object-fit: cover;
+        width: 100%;
+    }
+}
+//for about
+.user__about__table{
+    width: 100%;
+    border-collapse: collapse;
+    border-color: $color-white;
+    color: $color-white;
+    margin-bottom: $p-20;
+    td{
+        padding: 4px 15px;
+        font-size: 1.7rem;
+        letter-spacing: 1.5px;
+        line-height: 1.8rem;
+    }
+    img{
+        display: block;
+        height: $userSidebarItemHeight;
+    }
+}
+.user__about__buttons{
+    display:  flex;
+    margin-bottom: $p-20;
+
+}
+//for need help
+.user__needhelp__container.disable{
+    >img{
+        object-fit: cover;
+        width: 100%;
+    }
+}
+//for carts
+.userCarts{
+    table{
+        border-collapse: collapse;
+        border-color: $color-white;
+    }
+    td{
+        padding: 5px 10px;
+        color: $color-white;
+    }
+    img{
+        height: 60px;
+        object-fit: cover;
+    }
+    a{
+        display: inline-block;
+        text-decoration: none;
+        color: $color-white;
+        font-weight: bold;
+        cursor: pointer;
+    }
+}

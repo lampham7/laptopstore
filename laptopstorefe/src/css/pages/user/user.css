@@ -1,0 +1,337 @@
+/*
+@media only screen and (max-width: 576px) xs
+@media only screen and (min-width: 577px) and (max-width: 768px) sm
+@media only screen and (min-width: 769px) and (max-width: 992px) md
+@media only screen and (min-width: 993px) and (max-width: 1200px) lg
+
+*/
+.user__content {
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.5) inset;
+  height: 420px;
+  background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.81), transparent);
+  width: 653px;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+  .user__content {
+    padding-top: 70px;
+    width: 100vw;
+    height: 100vh;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .user__content {
+    padding-top: 70px;
+    width: 100vw;
+    height: 100vh;
+  }
+}
+
+.user__form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.user__content::-webkit-scrollbar {
+  width: 5px;
+  background-color: transparent;
+}
+
+.user__content::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: #FDD922;
+}
+
+.user__heading {
+  text-align: center;
+  font-size: 2.6rem;
+  font-weight: 700;
+  word-spacing: 0px;
+  padding-bottom: 20px;
+  color: #f7f7f7;
+}
+
+.user__input__field {
+  position: relative;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+.user__input__field__icon {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translate(-50%, -50%);
+}
+.user__input__field__error {
+  position: absolute;
+  bottom: 0;
+  left: 30px;
+  color: red;
+  transform: translateY(100%);
+  font-size: 1.2rem;
+  word-spacing: 0;
+  transition: transform 0.3s ease;
+}
+.user__input__field__error.show {
+  transform: translateY(0%);
+}
+
+.user__input {
+  background-color: #fff;
+  display: block;
+  width: 280px;
+  padding: 10px 15px;
+  padding-left: 30px;
+  border: none;
+  outline: none;
+  font-size: 1.6rem;
+  border-radius: 15px;
+  transition: padding-bottom 0.3s ease;
+}
+.user__input.show {
+  padding-bottom: 15px;
+}
+
+.user__btn__action {
+  text-align: center;
+  display: block;
+  width: 280px;
+  padding: 10px 15px;
+  font-size: 1.6rem;
+  border-radius: 15px;
+  border: none;
+  outline: none;
+  color: #ccc;
+  background-color: #7d7d7d;
+  text-transform: uppercase;
+  cursor: not-allowed;
+  font-weight: bold;
+}
+.user__btn__action.small {
+  width: fit-content;
+  padding: 5px 20px;
+  border-radius: 5px;
+  text-transform: capitalize;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  margin-right: 20px;
+}
+.user__btn__action.active {
+  cursor: pointer;
+  background-color: #FDD922;
+  color: #fff;
+}
+
+.user__login__forgotPassword {
+  margin-top: 10px;
+}
+.user__login__forgotPassword > a {
+  font-style: italic;
+  float: right;
+  color: #fff;
+  font-size: 1.4rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  text-decoration: underline;
+}
+.user__login__forgotPassword > a:hover {
+  color: #FDD922;
+}
+.user__login__more__actions__createAccount {
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.user__login__more__actions__createAccount > a {
+  color: #fff;
+  font-size: 1.3rem;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: color 0.4s ease;
+  text-decoration: underline;
+}
+.user__login__more__actions__createAccount > a:hover {
+  color: #FDD922;
+}
+
+.user__register__forgotPassword {
+  margin-top: 10px;
+}
+.user__register__forgotPassword > a {
+  font-style: italic;
+  float: right;
+  color: #fff;
+  font-size: 1.4rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  text-decoration: underline;
+}
+.user__register__forgotPassword > a:hover {
+  color: #FDD922;
+}
+.user__register__more__actions__createAccount {
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.user__register__more__actions__createAccount > a {
+  color: #fff;
+  font-size: 1.3rem;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: color 0.4s ease;
+  text-decoration: underline;
+}
+.user__register__more__actions__createAccount > a:hover {
+  color: #FDD922;
+}
+
+.user_reset__password__container.disable > img {
+  object-fit: cover;
+  width: 100%;
+}
+
+.user__about__table {
+  width: 100%;
+  border-collapse: collapse;
+  border-color: #fff;
+  color: #fff;
+  margin-bottom: 20px;
+}
+.user__about__table td {
+  padding: 4px 15px;
+  font-size: 1.7rem;
+  letter-spacing: 1.5px;
+  line-height: 1.8rem;
+}
+.user__about__table img {
+  display: block;
+  height: 70px;
+}
+
+.user__about__buttons {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.user__needhelp__container.disable > img {
+  object-fit: cover;
+  width: 100%;
+}
+
+.userCarts table {
+  border-collapse: collapse;
+  border-color: #fff;
+}
+.userCarts td {
+  padding: 5px 10px;
+  color: #fff;
+}
+.userCarts img {
+  height: 60px;
+  object-fit: cover;
+}
+.userCarts a {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.user__sidebar {
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+  list-style: none;
+}
+.user__sidebar__item {
+  text-decoration: none;
+  width: 115px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: 1px solid #f7f7f7;
+  background-color: #fff;
+  color: #000;
+  flex-direction: column;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+@media only screen and (max-width: 768px) {
+  .user__sidebar__item {
+    height: 60px;
+    padding: 0px 8px;
+  }
+}
+.user__sidebar__item__main-icon {
+  color: #000;
+  font-size: 2.4rem;
+}
+.user__sidebar__item__title {
+  font-size: 1.2rem;
+  word-spacing: -1.5px;
+}
+@media only screen and (max-width: 768px) {
+  .user__sidebar__item__title {
+    text-align: center;
+  }
+}
+.user__sidebar__item:hover, .user__sidebar__item.active {
+  background-color: #FDD922;
+  color: #fff;
+}
+.user__sidebar__item:hover .user__sidebar__item__main-icon, .user__sidebar__item.active .user__sidebar__item__main-icon {
+  color: #fff;
+}
+.user__sidebar__item.disable {
+  background-color: #7d7d7d;
+  cursor: not-allowed;
+  color: #ccc;
+}
+.user__sidebar__item.disable:hover, .user__sidebar__item.disable.active {
+  background-color: #7d7d7d;
+  color: #ccc;
+}
+.user__sidebar__item.disable .user__sidebar__item__main-icon {
+  color: #ccc;
+}
+@media only screen and (max-width: 768px) {
+  .user__sidebar {
+    position: fixed;
+    z-index: 97;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.user__container {
+  width: 100%;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.user__container__content {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+/*# sourceMappingURL=user.css.map */

@@ -1,0 +1,285 @@
+@use "../../../abstracts/" as *;
+.productList__container, .productsHeader__container{
+    @include tablet{
+        padding: $p-10;
+        margin-top: 0;
+    }
+    @include mobile{
+        padding: $p-5;
+        margin-top: 0;
+    }
+}
+.productList__item{
+    &:hover &__link__about{
+        transform: translateY(0%);
+    }
+    &:hover{
+        box-shadow: 0px 1px 3px $text-color-primary !important;
+    }
+    transition: box-shadow 0.3s ease;
+    margin: $p-10;
+    position: relative;
+    box-shadow: 0px 1px 3px rgba(0,0,0,0.2);
+    &__link{
+        display: block;
+        overflow: hidden;
+        position: relative;
+        &-img{
+            padding: $p-20;
+            height: 220px;
+            @include flex(center, center);
+            @include tablet{
+                @include flex(center, center);
+            }
+            @include  mobile{
+                @include flex(center, center);
+            }
+            img{
+                max-height: 220px;
+                max-width: 220px;
+                width: 100%;
+                object-fit: contain;
+            }
+        }
+        &__about{
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: $p-10;
+            transition: transform 0.3s ease;
+            transform: translateY(100%);
+            &-model, &-screen, &-cpu, &-vga, &-ram{
+                font-size: 1.4rem;
+                font-weight: 900;
+                color: red;
+                white-space: nowrap;
+                height: 1.65rem;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            &-model{
+                color: $text-color-primary-second;
+            }
+        }
+        &:hover &-link{
+            transform: translateY(0) !important;
+        }
+        &-link{
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            transition: transform 0.3s ease;
+            transform: translateY(100%);
+            background-color: rgba($color: #000000, $alpha: 0.2);
+            padding: $p-10;
+            height: calc( 5 * 1.65rem);
+            @include flex(space-between, center);
+            i{
+                color: $color-white;
+                font-size: 1.6rem;
+            }
+            span{
+                transition: all 0.3s ease;
+                background-color: $color-black;
+                color: $color-white;
+                padding: 8px 10px;
+                border-radius: 5px;
+                
+                &:hover{
+                    background-color: $text-color-primary;
+                }
+            }
+        }
+    }
+    &__about{
+        padding: $p-10;
+        &-name{
+            text-transform: uppercase;
+            color: $color-black;
+            font-size: 1.35rem;
+            font-weight: 700;
+            line-height: 1.7rem;
+            height: 3.5rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            margin-bottom: $p-20;
+        }
+        &__price{
+            &-old, &-new{
+                overflow: hidden;
+                text-overflow: ellipsis;
+                letter-spacing: 1px;
+            }
+            &-old{
+                text-decoration: line-through;
+                color: $text-color-second;
+                font-size: 1.4rem;
+                height: 2rem;
+                opacity: 0;
+            }
+            &-new{
+                color: red;
+                font-size: 2rem;
+                font-weight: 800;
+                height: 2.4rem;
+            }
+        }
+        &__discount{
+            opacity: 0;
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            @include flex(center, center);
+            @include smallDevice(){
+                bottom: 100%;
+                transform: translateY(calc(100% + 10px));
+            }
+            &-img{
+                width: 100%;
+                object-fit: cover;
+            }
+            &-percent{
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                @include flex(center, center);
+                color: $color-white;
+                font-weight: 900;
+                letter-spacing: 1px;
+                font-weight: 1.8rem;
+            }
+        }
+    }
+}
+.productList__item.discount{
+    .productList__item__about__price{
+        &-old{
+            opacity: 1;
+        }
+
+    }
+    .productList__item__about__discount{
+        opacity: 1;
+    }
+}
+.productList__pagination{
+    @include flex(center, center);
+    button{
+        font-size: 1.7rem !important;
+        font-family: 'Mulish', sans-serif;
+    }
+}
+.productsHeader{
+    &__container{
+        padding: 10px;
+    }
+    &__heading{
+        text-align: center;
+        margin: 30px 0px;
+        p{
+            font-size: 3.5rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+        @include smallDevice(){
+            margin: 12px 0px;
+            p{
+                font-size: 2.8rem;
+            }
+        }
+    }
+    &__controls{
+        margin-bottom: 15px;
+        @include flex(space-between,center);
+        @include smallDevice(){
+            align-items: flex-start;
+        }
+        &__left{
+            cursor: pointer;
+            @include flex(center, center);
+            color: $color-black;
+            font-size: 2rem;
+            i{
+                font-size: 2.8rem;
+                margin-right: 10px;
+            }
+            @include smallDevice(){
+                font-size: 1.8rem;
+                i{
+                    font-size: 2.6rem;
+                    line-height: 3.5rem;
+                }
+            }
+        }
+        &__left:hover{
+            color: $text-color-primary;
+            i{
+                color: $text-color-primary;
+            }
+        }
+        &__right{
+            @include flex(center, center);
+            &__viewMode, &__sort{
+                @include flex(center, center);
+            }
+            &__viewMode{
+                @include smallDevice(){
+                    margin-top: 15px;
+                }
+            }
+            @include smallDevice(){
+                flex-direction: column-reverse;
+                align-items: flex-end
+            };
+            span{
+                @include flex(center, center);
+            }
+            p{
+                margin-right: 10px;
+                margin-left: 20px;
+            }
+            p,i{
+                font-size: 2rem;
+                word-spacing: 2px;
+                letter-spacing: 1.5px;
+                line-height: 2rem;
+                @include smallDevice(){
+                    font-size: 1.6rem;
+                    letter-spacing: 1px;
+                    word-spacing: 0;
+                }
+            }
+            select{
+                outline: none;
+                word-spacing: 2px;
+                padding: 8px 10px;
+                border-color: $text-color-second;
+                font-size: 1.8rem;
+                color: $text-color;
+                @include smallDevice(){
+                    padding: 6px 10px;
+                    font-size: 1.6rem;
+                }
+            }
+            i{
+                cursor: pointer;
+                &:hover{
+                    color: $text-color-primary;
+                }
+                font-size: 3.2rem;
+                width: 2.6rem;
+                &.active{
+                    cursor: default;
+                    color: $text-color-primary;
+                }
+            }
+        }
+    }
+}

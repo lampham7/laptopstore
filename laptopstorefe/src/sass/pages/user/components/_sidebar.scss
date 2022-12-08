@@ -1,0 +1,60 @@
+@use "../../../abstracts/" as * ;
+.user__sidebar{
+    box-shadow: 0px 0px 20px rgba(0,0,0,0.5);
+    list-style: none;
+    &__item{
+        text-decoration: none;
+        width: $userSidebarItemWidth;
+        height: $userSidebarItemHeight;
+        @include smallDevice{
+            height: $navbar-height;
+            padding: 0px 8px;
+        }
+        
+        @include flex(center, center);
+        border-right: 1px solid $border-color;
+        background-color: $background-color;
+        color: $text-color;
+        flex-direction: column;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        &__main-icon{
+            color: $text-color;
+            font-size: 2.4rem;
+        }
+        &__title{
+            font-size: 1.2rem;
+            word-spacing: -1.5px;
+            @include smallDevice{
+                text-align: center;
+            }
+        }
+        &:hover, &.active{
+            background-color: $text-color-primary;
+            color: $color-white;
+            .user__sidebar__item__main-icon{
+                color: $color-white;
+            }
+        }
+    }
+    &__item.disable{
+        background-color: $text-color-second;
+        cursor: not-allowed;
+        color: $color-disable;
+        &:hover, &.active{
+            background-color: $text-color-second;
+            color: $color-disable;
+        }
+        .user__sidebar__item__main-icon{
+            color: $color-disable;
+        }
+    }
+    @include smallDevice{
+        position: fixed;
+        z-index: 97;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        @include flex(space-between,center);
+    }
+}

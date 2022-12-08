@@ -1,0 +1,25 @@
+@use "../abstracts/" as *;
+.userPage__footer{
+    margin-top: 20px;
+    padding: 20px;
+    background-color: $text-color-primary-second;
+    color: $color-white;
+}
+.footer__list__icon{
+    @include flex(center, center);
+    a, span{
+        display: inline-block;
+        font-size: 2.8rem;
+        color: $color-white;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin-right: 5px;
+    }
+    a:hover,span:hover{
+        color: $text-color-primary;
+    }
+}
+.footer__title{
+    text-align: center;
+    font-size: 1.4rem;
+}

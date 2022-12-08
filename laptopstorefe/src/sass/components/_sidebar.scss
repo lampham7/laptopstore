@@ -1,0 +1,150 @@
+@use "../abstracts/" as *;
+.sidebar{
+    position: fixed;
+    z-index: 100;
+    top:0;
+    left: 0;
+    @include tablet(){
+        left: -100%;
+    }
+    @include mobile(){
+        left: -100%;
+    }
+    &.show{
+        left: 0;
+    }
+    transition: left 0.3s ease;
+    bottom: 0;
+    width: $sidebar-width;
+    background-color: $background-color;
+    padding: $p-20-0;
+    &__icon__close{
+        position: absolute;
+        top: 0;
+        right: 0;
+        i{
+            font-size: 3.2rem;
+            cursor: pointer;
+            color: $color-black;
+        }
+        i:hover{
+            color: $text-color-second;
+        }
+        display: none;
+        @include tablet(){
+            display: block;
+        }
+        @include mobile(){
+            display: block;
+        }
+    }
+    &__logo{
+        &__image{
+            > a{
+                height: 150px;
+                @include flex(center,center);
+                > img{
+                    display: block;
+                    height: 100%;
+                }
+            }
+        }
+    }
+    &__actions{
+        >li:first-child{
+            @include smallDevice{
+                display: none;
+            }
+        }
+        list-style: none;
+        margin: $m-25-0;
+        @include flex(center, center);
+        >li{
+            padding: 0px 8px;
+            position: relative;
+            a,i{
+                color: $text-color-second;
+                font-size: 2.6rem;
+                cursor: pointer;
+                transition: color 0.3s ease;
+            }
+            span{
+                position: absolute;
+                top: -18%;
+                right: -2px;
+                background:$color-black;
+                width: 18px;
+                height: 18px;
+                @include flex(center, center);
+                border-radius: 50%;
+                font-size: 1.1rem;
+                color: $color-white;
+            }
+        }
+        >li:hover{
+            a,i{
+                color: $text-color-primary;
+            }
+        }
+    }
+    &__brands{
+        height: -webkit-fill-available;
+        overflow-y: scroll;
+        margin-top: $m-t-20;
+        list-style: none;
+        &__item{
+            a{
+                color: $text-color;
+                display: block;
+                padding: $p-10;
+                font-size: 1.8rem;
+                text-decoration: none;
+                transition: all 0.3s ease;
+                text-align: center;
+                border-bottom: 1px solid $border-color;
+                letter-spacing: 2px;
+            }
+            a:hover{
+                color: $text-color-primary;
+                text-decoration: underline;
+                background-color: $background-color-second;
+            }
+        }
+    }
+}
+.searchInput__mobile{
+    @include smallDevice(){
+        display: none;
+    }
+    position: fixed;
+    z-index: 101;
+    left: 0;
+    top: 0;
+    right: 0;
+    transform: translateY(-105%);
+    transition: transform 0.3s ease;
+    &.show{
+        transform: translateY(0);
+    }
+    &__content{
+        margin-left: $sidebar-width;
+        @include flex(center, center);
+        overflow: hidden;
+        // background-image: linear-gradient(180deg, rgb(250 248 230), transparent);
+        background-color: white;
+        box-shadow: 2px 2px 2px rgba($color: #000000, $alpha: 0.2);
+        height: $navbar-height;
+        input{
+            font-size: 1.6rem;
+            width: 270px;
+            outline: none;
+            border: 1px solid $text-color;
+            padding: 0px 8px;
+            border-radius: 5px;
+            letter-spacing: 1.5px;
+            word-spacing: 0px;
+            line-height: 4rem;
+            background-color: transparent;
+        }
+    }
+}
