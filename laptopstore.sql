@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th7 29, 2022 lúc 09:19 AM
--- Phiên bản máy phục vụ: 10.4.21-MariaDB
+-- Thời gian đã tạo: Th11 29, 2022 lúc 09:19 AM
+-- Phiên bản máy phục vụ: 10.4.22-MariaDB
 -- Phiên bản PHP: 7.4.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
