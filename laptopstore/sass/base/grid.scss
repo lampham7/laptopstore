@@ -1,0 +1,38 @@
+@use "./../abstracts/" as *;
+.row::after{
+    content:"";
+    display: block;
+    clear:both;
+}
+.col{
+    float:left;
+}
+//.col.col-xs.col-sm.col-md.col-lg 
+@media only screen and (max-width: $xs-width){//xs
+    @each $i in $numbs {
+        .col-xs-#{$i}{
+            width: calc((100% / 12) * #{$i});
+        }
+    }
+}
+@media only screen and (min-width: 1+ $xs-width) and (max-width: $sm-width){//sm
+    @each $i in $numbs {
+        .col-sm-#{$i}{
+            width: calc((100% / 12) * #{$i});
+        }
+    }
+}
+@media only screen and (min-width: 1+ $sm-width) and (max-width: $md-width){//md
+    @each $i in $numbs {
+        .col-md-#{$i}{
+            width: calc((100% / 12) * #{$i});
+        }
+    }
+}
+@media only screen and (min-width: 1+ $md-width ) {//lg
+    @each $i in $numbs {
+        .col-lg-#{$i}{
+            width: calc((100% / 12) * #{$i});
+        }
+    }
+}

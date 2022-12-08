@@ -1,0 +1,75 @@
+/*
+@media only screen and (max-width: 576px) xs
+@media only screen and (min-width: 577px) and (max-width: 768px) sm
+@media only screen and (min-width: 769px) and (max-width: 992px) md
+@media only screen and (min-width: 993px) and (max-width: 1200px) lg
+
+*/
+.container {
+  background-color: #014693;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container__registor {
+  border-radius: 8px;
+  background-color: #fff;
+  width: 420px;
+  overflow: hidden;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+}
+.container__registor > h3 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+.container__registor > .login > span {
+  font-size: 1.4rem;
+}
+.container__registor > .login > a {
+  font-size: 1.4rem;
+  font-style: italic;
+  text-decoration: none;
+  color: #014693;
+}
+.container__registor > .login > a:hover {
+  text-decoration: underline;
+}
+
+.form__register {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.form__register > input {
+  margin: 5px 0px;
+  width: 250px;
+  font-size: 1.4rem;
+  color: #666;
+  outline: none;
+  border: 1px solid #000;
+  padding: 5px 10px;
+  border-radius: 3px;
+}
+.form__register > input:focus {
+  border-color: #014693;
+}
+.form__register > button {
+  font-size: 1.4rem;
+  outline: none;
+  border: none;
+  padding: 5px 15px;
+  color: #fff;
+  background-color: #014693;
+  border-radius: 3px;
+  margin: 5px 0px;
+  cursor: pointer;
+}
+.form__register > button:hover {
+  opacity: 0.8;
+}
+
+/*# sourceMappingURL=login.css.map */
